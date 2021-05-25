@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="seekBar" type="id" />
+    <item name="imageButton" type="id" />
+    <item name="imageButton3" type="id" />
+    <item name="imageButton4" type="id" />
+    <item name="imageButton5" type="id" />
+    <item name="imageButton6" type="id" />
+</resources>

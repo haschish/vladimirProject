@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentThree">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Тут должны быть музыка, которая понравилась, но к счастью я не знаю, как передавать переменные из фрагментов в фрагмент, поэтому я пойду на занятие в четверг и буду задавать вопросы" />
+
+</FrameLayout>
