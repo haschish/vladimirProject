@@ -32,7 +32,7 @@
             android:id="@+id/current_playing"
             android:name="com.example.obuza.FragmentThree"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/sections_control" />
@@ -62,12 +62,12 @@
                 android:text="Favorite"
                 android:onClick="@{() -> activityMain.changeSection(1)}"/>
 
-            <RadioButton
-                android:id="@+id/topRadioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Top"
-                android:onClick="@{() -> activityMain.changeSection(2)}"/>
+<!--            <RadioButton-->
+<!--                android:id="@+id/topRadioButton"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Top"-->
+<!--                android:onClick="@{() -> activityMain.changeSection(2)}"/>-->
         </RadioGroup>
 
 

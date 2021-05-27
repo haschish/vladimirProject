@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         switch (sectionId) {
             case 0: navController.navigate(R.id.fragmentOne); break;
             case 1: navController.navigate(R.id.fragmentTwo); break;
-            case 2: navController.navigate(R.id.fragmentThree); break;
+//            case 2: navController.navigate(R.id.fragmentThree); break;
         }
     }
 }

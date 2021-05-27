@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-import static com.example.obuza.FragmentOne.mediaPlayer;
+//import static com.example.obuza.FragmentOne.mediaPlayer;
 
 
 public class FragmentTwo extends Fragment {
@@ -34,41 +34,41 @@ public class FragmentTwo extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inflatedView = inflater.inflate(R.layout.fragment_two, container, false);
-        seekBar = (SeekBar) inflatedView.findViewById(R.id.seekBar);
-        seekBar.setMax(mediaPlayer.getDuration());
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (fromUser) {
-                    fragmentOne.mediaPlayer.seekTo(progress);
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
+//        seekBar = (SeekBar) inflatedView.findViewById(R.id.seekBar);
+//        seekBar.setMax(mediaPlayer.getDuration());
+//        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            @Override
+//            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                if (fromUser) {
+//                    fragmentOne.mediaPlayer.seekTo(progress);
+//                }
+//            }
+//
+//            @Override
+//            public void onStartTrackingTouch(SeekBar seekBar) {
+//
+//            }
+//
+//            @Override
+//            public void onStopTrackingTouch(SeekBar seekBar) {
+//
+//            }
+//        });
         button = (ImageButton) inflatedView.findViewById(R.id.imageButton);
         button3 = (ImageButton) inflatedView.findViewById(R.id.imageButton3);
         button4 = (ImageButton) inflatedView.findViewById(R.id.imageButton4);
-        SeekBar seekBar2 = inflatedView.findViewById(R.id.seekBar2);
-        Switch switchVisibility = inflatedView.findViewById(R.id.switch1);
-        switchVisibility.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    seekBar2.setEnabled(false);
-                } else {
-                    seekBar2.setEnabled(true);
-                }
-            }
-        });
+//        SeekBar seekBar2 = inflatedView.findViewById(R.id.seekBar2);
+//        Switch switchVisibility = inflatedView.findViewById(R.id.switch1);
+//        switchVisibility.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//                    seekBar2.setEnabled(false);
+//                } else {
+//                    seekBar2.setEnabled(true);
+//                }
+//            }
+//        });
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -84,29 +84,29 @@ public class FragmentTwo extends Fragment {
             button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.pause();
+//                mediaPlayer.pause();
 
             }
         });
             button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayer.start();
+//                mediaPlayer.start();
 
             }
         });
         return inflatedView;
     }
 
-    public static class UpdateSeekBar implements Runnable {
-
-        @Override
-        public void run() {
-            if (mediaPlayer.getCurrentPosition() > 1) { // если убрать условие, то приложение вылетает, но если будет с условие, то  seekbar не передвигается ('void android.widget.SeekBar.setProgress(int)' on a null object reference)
-                seekBar.setProgress(mediaPlayer.getCurrentPosition());
-
-                handler.postDelayed(this, 100);
-            }
-        }
-    }
+//    public static class UpdateSeekBar implements Runnable {
+//
+//        @Override
+//        public void run() {
+//            if (mediaPlayer.getCurrentPosition() > 1) { // если убрать условие, то приложение вылетает, но если будет с условие, то  seekbar не передвигается ('void android.widget.SeekBar.setProgress(int)' on a null object reference)
+//                seekBar.setProgress(mediaPlayer.getCurrentPosition());
+//
+//                handler.postDelayed(this, 100);
+//            }
+//        }
+//    }
 }
