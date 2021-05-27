@@ -13,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -55,6 +57,18 @@ public class FragmentTwo extends Fragment {
         button = (ImageButton) inflatedView.findViewById(R.id.imageButton);
         button3 = (ImageButton) inflatedView.findViewById(R.id.imageButton3);
         button4 = (ImageButton) inflatedView.findViewById(R.id.imageButton4);
+        SeekBar seekBar2 = inflatedView.findViewById(R.id.seekBar2);
+        Switch switchVisibility = inflatedView.findViewById(R.id.switch1);
+        switchVisibility.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    seekBar2.setEnabled(false);
+                } else {
+                    seekBar2.setEnabled(true);
+                }
+            }
+        });
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -83,6 +97,7 @@ public class FragmentTwo extends Fragment {
         });
         return inflatedView;
     }
+
     public static class UpdateSeekBar implements Runnable {
 
         @Override

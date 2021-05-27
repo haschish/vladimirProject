@@ -21,7 +21,7 @@
             android:layout_marginLeft="80dp"
             android:layout_marginTop="20dp"
             android:textSize="20dp"
-            android:text="Водица" />
+            android:text="Люди Не Верили" />
 
         <ImageButton
             android:id="@+id/imageButton1"

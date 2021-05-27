@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button2:
                 fragment = new FragmentTwo();
                 break;
-//            case R.id.button3:
-//                fragment = new FragmentThree();
-//                break;
+            case R.id.button3:
+                fragment = new FragmentThree();
+                break;
         }
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();

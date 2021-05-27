@@ -53,7 +53,7 @@ public class FragmentOne extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getContext(),"Нажата кнопка 'OK'",Toast.LENGTH_SHORT).show();
 
-                audioUrl = "https://cdn1.sefon.pro/prev/wBchq3VFwz2epxp2JCzsLw/1621998902/128/%D0%9E%D0%BB%D1%8C%D0%B3%D0%B0%20%D0%91%D1%83%D0%B7%D0%BE%D0%B2%D0%B0%20-%20%D0%92%D0%BE%D0%B4%D0%B8%D1%86%D0%B0%20%28192kbps%29.mp3";
+                audioUrl = "https://dnl.megapesni.com/get/online/9tFvDfYYsDwYASB126OGsQ/1622092452/7b735859/2017/04/%D0%9E%D0%BB%D1%8C%D0%B3%D0%B0%20%D0%91%D1%83%D0%B7%D0%BE%D0%B2%D0%B0%20-%20%D0%9B%D1%8E%D0%B4%D0%B8%20%D0%9D%D0%B5%20%D0%92%D0%B5%D1%80%D0%B8%D0%BB%D0%B8.mp3";
 
                 try {
 
@@ -81,7 +81,7 @@ public class FragmentOne extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getContext(),"Нажата кнопка 'OK'",Toast.LENGTH_SHORT).show();
 
-                audioUrl = "https://cdn2.sefon.pro/prev/vwuQs6qkKjcu3uecBHQ5aQ/1621998902/12/%D0%9E%D0%BB%D1%8C%D0%B3%D0%B0%20%D0%91%D1%83%D0%B7%D0%BE%D0%B2%D0%B0%20-%20%23%D0%9C%D0%B0%D0%BB%D0%BE%D0%9F%D0%BE%D0%BB%D0%BE%D0%B2%D0%B8%D0%BD%20%28192kbps%29.mp3";
+                audioUrl = "https://dnl.megapesni.com/get/online/kDQM5AiJhCu3WMjx7IbAhg/1622092116/44a4605d/2018/12/Ольга Бузова - Танцуй Под Бузову.mp3";
                 try {
                     mediaPlayer.reset();
                     mediaPlayer.setDataSource(audioUrl);
