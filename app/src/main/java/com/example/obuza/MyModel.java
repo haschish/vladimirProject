@@ -1,6 +1,8 @@
 package com.example.obuza;
 
 import android.media.MediaPlayer;
+import android.os.CountDownTimer;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -29,9 +31,20 @@ enum Status {
 
 public class MyModel extends ViewModel {
     MediaPlayer mediaPlayer = new MediaPlayer();
+    CountDownTimer timer;
 
     public MyModel() {
         loadSongs();
+        timer = new CountDownTimer(7*24*3600*1000, 200) {
+            @Override
+            public void onTick(long l) {
+                updateSongPosition();
+            }
+
+            @Override
+            public void onFinish() {
+            }
+        };
     }
 
     private MutableLiveData<List<Song>> list = new MutableLiveData<List<Song>>();
@@ -54,6 +67,16 @@ public class MyModel extends ViewModel {
         return playing;
     }
 
+    private MutableLiveData<Integer> songDuration = new MutableLiveData<>(0);
+    public LiveData<Integer> getSongDuration() {
+        return songDuration;
+    }
+
+    private MutableLiveData<Integer> songPosition = new MutableLiveData<>(0);
+    public LiveData<Integer> getSongPosition() {
+        return songPosition;
+    }
+
 
     public void playSong(Song song) {
         currentSong.setValue(song);
@@ -62,11 +85,35 @@ public class MyModel extends ViewModel {
         try {
             mediaPlayer.setDataSource(song.songLink);
             mediaPlayer.prepare();
+            songDuration.setValue(mediaPlayer.getDuration());
             mediaPlayer.start();
+            timer.start();
             playing.setValue(true);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void play() {
+        mediaPlayer.start();
+        timer.start();
+        playing.setValue(true);
+    }
+
+    public void pause() {
+        mediaPlayer.pause();
+        timer.cancel();
+        playing.setValue(false);
+    }
+
+    public void setSongPosition(Integer position) {
+        mediaPlayer.seekTo(position);
+        songPosition.setValue(position);
+    }
+
+    private void updateSongPosition() {
+        songPosition.setValue(mediaPlayer.getCurrentPosition());
+
     }
 
 
