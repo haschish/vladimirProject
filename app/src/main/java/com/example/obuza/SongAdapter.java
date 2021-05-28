@@ -28,8 +28,8 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.Holder> {
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         Song song = list.get(position);
-        Log.d("onBindViewHolder", song.name);
         holder.title.setText(song.name);
+        holder.singer.setText(song.songLink);
     }
 
     @Override
@@ -39,9 +39,11 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.Holder> {
 
     public class Holder extends RecyclerView.ViewHolder {
         TextView title;
+        TextView singer;
         public Holder(View v) {
             super(v);
             title = v.findViewById(R.id.titleTextView);
+            singer = v.findViewById(R.id.singerTextView);
         }
     }
 }
