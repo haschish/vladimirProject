@@ -81,20 +81,20 @@ public class FragmentTwo extends Fragment {
 //
 //            }
 //        });
-            button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                mediaPlayer.pause();
-
-            }
-        });
-            button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                mediaPlayer.start();
-
-            }
-        });
+//            button3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                mediaPlayer.pause();
+//
+//            }
+//        });
+//            button4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                mediaPlayer.start();
+//
+//            }
+//        });
         return inflatedView;
     }
 
