@@ -50,7 +50,7 @@ public class FragmentOne extends Fragment {
         MyModel viewModel = new ViewModelProvider(requireActivity()).get(MyModel.class);
         viewModel.getStatus().observe(getViewLifecycleOwner(), (status) -> {
             if (status == Status.OK) {
-                SongAdapter adapter = new SongAdapter(viewModel.getList().getValue());
+                SongAdapter adapter = new SongAdapter(viewModel);
                 binding.allSongsRecyclerView.setAdapter(adapter);
             }
         });

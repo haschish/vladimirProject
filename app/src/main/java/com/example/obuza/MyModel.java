@@ -1,9 +1,12 @@
 package com.example.obuza;
 
+import android.media.MediaPlayer;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -25,6 +28,7 @@ enum Status {
 }
 
 public class MyModel extends ViewModel {
+    MediaPlayer mediaPlayer = new MediaPlayer();
 
     public MyModel() {
         loadSongs();
@@ -40,12 +44,37 @@ public class MyModel extends ViewModel {
         return status;
     }
 
+    private MutableLiveData<Song> currentSong = new MutableLiveData<>();
+    public LiveData<Song> getCurrentSong() {
+        return currentSong;
+    }
+
+    private MutableLiveData<Boolean> playing = new MutableLiveData<>(false);
+    public LiveData<Boolean> getPlaying() {
+        return playing;
+    }
+
+
+    public void playSong(Song song) {
+        currentSong.setValue(song);
+
+        mediaPlayer.reset();
+        try {
+            mediaPlayer.setDataSource(song.songLink);
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+            playing.setValue(true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void loadSongs() {
         status.setValue(Status.LOADING);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://obuza-api.deno.dev/")
+                .baseUrl("https://obuza.deno.dev/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

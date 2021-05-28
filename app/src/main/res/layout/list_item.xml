@@ -32,7 +32,6 @@
 
     <TextView
         android:id="@+id/singerTextView"
-        android:text="asdljfalsjfdlasjdfl"
         android:textColor="@color/black"
         android:layout_width="0dp"
         android:layout_height="30dp"
